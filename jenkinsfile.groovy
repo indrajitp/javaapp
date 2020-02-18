@@ -28,7 +28,9 @@ pipeline {
         }
         stage('upload') {
             steps {
-                
+                sh '''
+                    echo "Need to add upload code here"
+                '''
             }
         }
     }
