@@ -34,8 +34,8 @@ pipeline {
                 def uploadSpec = """{
                 "files": [
                     {
-                        "pattern": "$WORKSPACE/javaapp/*.war",
-                        "target": "libs-snapshot-local/com/gpi/gae/javaapp/SNAPSHOT/"
+                        "pattern": "$WORKSPACE/target/*.war",
+                        "target": "libs-snapshot-local/com/bitwiseglobal/javaapp/"
                     }
                 ]
                 }"""
