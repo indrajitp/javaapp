@@ -41,7 +41,7 @@ pipeline {
                 "files": [
                     {
                         "pattern": "$WORKSPACE/target/*.war",
-                        "target": "libs-snapshot-local/com/bitwiseglobal/javaapp/{$version}"
+                        "target": "libs-snapshot-local/com/bitwiseglobal/javaapp/${version}"
                     }
                 ]
                 }"""
