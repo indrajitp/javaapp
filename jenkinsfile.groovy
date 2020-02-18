@@ -32,7 +32,7 @@ pipeline {
 					sh '''
 					cp $WORKSPACE/target/*.war ./
 					'''
-						veracode applicationName: "GNAP", criticality: 'High', sandboxName: 'transactionApi', pHost: 'analysiscenter.veracode.com', scanName: "javaapp-${BUILD_NUMBER}",uploadIncludesPattern: '*.*ar', useIDkey: true, vid: '575998590c9d79338d32d35eaaa1b13d', vkey: 'e5353cc0736e2783fa2c454cc7c728304adf79de661267d0e9d33e4d1d8491e3ff72244020bc3d33fd98c82868fc1423918be777e016920dcd1eaccb549377ec'
+						veracode applicationName: "GNAP", criticality: 'High', sandboxName: 'javaapp', pHost: 'analysiscenter.veracode.com', scanName: "javaapp-${BUILD_NUMBER}",uploadIncludesPattern: '*.*ar', useIDkey: true, vid: '575998590c9d79338d32d35eaaa1b13d', vkey: 'e5353cc0736e2783fa2c454cc7c728304adf79de661267d0e9d33e4d1d8491e3ff72244020bc3d33fd98c82868fc1423918be777e016920dcd1eaccb549377ec'
 				}
             }
         }
