@@ -16,7 +16,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building 2..'
+				sh '''
+                mvn clean install
+				
+				'''
             }
         }
         stage('Scan') {
@@ -26,7 +29,19 @@ pipeline {
         }
         stage('upload') {
             steps {
-                echo 'Deploying2....'
+                //Upload to artifactory
+                def server = Artifactory.server 'artifactory'
+                def uploadSpec = """{
+                "files": [
+                    {
+                        "pattern": "$WORKSPACE/javaapp/*.war",
+                        "target": "libs-snapshot-local/com/gpi/gae/${service}/${version}/"
+                    }
+                ]
+                }"""
+                server.upload(uploadSpec)
+                def buildInfo = server.upload uploadSpec
+                server.publishBuildInfo buildInfo
             }
         }
     }
