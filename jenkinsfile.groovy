@@ -32,7 +32,7 @@ pipeline {
 					sh '''
 					cp $WORKSPACE/target/*.war ./
 					'''
-						veracode applicationName: "App Engine Application", criticality: 'High', sandboxName: 'javaapp', pHost: 'analysiscenter.veracode.com', scanName: "javaapp-${BUILD_NUMBER}",uploadIncludesPattern: '*.*ar', useIDkey: true, vid: 'indrajit.patil3@globalpay.com', vkey: 'IP@Jan2020'
+						veracode applicationName: "App Engine Application", criticality: 'High', sandboxName: 'javaapp', pHost: 'analysiscenter.veracode.com', scanName: "javaapp-${BUILD_NUMBER}",uploadIncludesPattern: '*.*ar', useIDkey: true, vid: 'indrajit.patil3@globalpay.com', vkey: 'IP%Jan2020'
 				}
             }
         }
