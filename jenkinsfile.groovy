@@ -25,7 +25,7 @@ pipeline {
 				}
             }
         }
-        stage('Scan') {
+        stage('CodeScan') {
             steps {
                 script {
 					echo "Executing VeraCode Security Scan..."
@@ -36,7 +36,7 @@ pipeline {
 				}
             }
         }
-        stage('upload') {
+        stage('Upload') {
             steps {
 				script
 				{
