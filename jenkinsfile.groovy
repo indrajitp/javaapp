@@ -19,6 +19,9 @@ pipeline {
 				sh '''
                 mvn clean install
 				'''
+				def pom = readMavenPom file: 'pom.xml'
+				def version = pom.version
+				println "Version: ${version}"
             }
         }
         stage('Scan') {
@@ -35,7 +38,7 @@ pipeline {
                 "files": [
                     {
                         "pattern": "$WORKSPACE/target/*.war",
-                        "target": "libs-snapshot-local/com/bitwiseglobal/javaapp/"
+                        "target": "libs-snapshot-local/com/bitwiseglobal/javaapp/{$version}"
                     }
                 ]
                 }"""
