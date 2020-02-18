@@ -16,12 +16,15 @@ pipeline {
         }
         stage('Build') {
             steps {
+			script
+				{
 				sh '''
                 mvn clean install
 				'''
 				def pom = readMavenPom file: 'pom.xml'
 				def version = pom.version
 				println "Version: ${version}"
+				}
             }
         }
         stage('Scan') {
