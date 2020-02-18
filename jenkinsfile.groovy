@@ -21,9 +21,7 @@ pipeline {
 				sh '''
                 mvn clean install
 				'''
-				def pom = readMavenPom file: 'pom.xml'
-				def version = pom.version
-				println "Version: ${version}"
+
 				}
             }
         }
@@ -36,6 +34,10 @@ pipeline {
             steps {
 				script
 				{
+				def pom = readMavenPom file: 'pom.xml'
+				def version = pom.version
+				println "Version: ${version}"
+				
 				def server = Artifactory.server 'artifactory'
                 def uploadSpec = """{
                 "files": [
