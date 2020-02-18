@@ -18,7 +18,6 @@ pipeline {
             steps {
 			script
 				{
-				cleanWs()
 				sh '''
                 mvn clean install
 				'''
@@ -57,6 +56,7 @@ pipeline {
                 server.upload(uploadSpec)
                 def buildInfo = server.upload uploadSpec
                 server.publishBuildInfo buildInfo
+				cleanWs()
 				}
                 
             }
