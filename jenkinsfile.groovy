@@ -18,6 +18,7 @@ pipeline {
             steps {
 			script
 				{
+				cleanWs()
 				sh '''
                 mvn clean install
 				'''
