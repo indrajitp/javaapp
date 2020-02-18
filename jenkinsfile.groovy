@@ -19,12 +19,12 @@ pipeline {
                 echo 'Building 2..'
             }
         }
-        stage('Test') {
+        stage('Scan') {
             steps {
                 echo 'Testing2..'
             }
         }
-        stage('Deploy') {
+        stage('upload') {
             steps {
                 echo 'Deploying2....'
             }
