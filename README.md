@@ -1,2 +1,2 @@
 # javaapp
-Helloworld rest service source code to deploy on tomcat hosted on azure VM
+Sample rest service source code to deploy on tomcat hosted on bajaj on prem server
